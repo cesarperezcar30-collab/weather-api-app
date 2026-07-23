@@ -2,29 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Colorful Weather App</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-    <div class="container">
-        <h1>🌤 Weather App</h1>
+<body class="default-weather">
 
-        <input
-            type="text"
-            id="cityInput"
-            placeholder="Enter a city">
+    <main class="weather-card">
+        <h1>Weather App</h1>
 
-        <button id="searchBtn">
-            Search
-        </button>
+        <form id="searchForm" class="search-area">
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter a city"
+                autocomplete="off"
+            >
 
-        <div id="weatherResult"></div>
-    </div>
+            <button type="submit" id="searchBtn">
+                Search
+            </button>
+        </form>
+
+        <p id="message">
+            Search for a city to see its weather.
+        </p>
+
+        <section id="weatherResult" class="hidden">
+            <div id="weatherIcon" class="weather-icon">🌤️</div>
+
+            <h2 id="locationName">City</h2>
+
+            <p id="condition" class="condition">
+                Weather condition
+            </p>
+
+            <p id="temperature" class="temperature">
+                --°F
+            </p>
+
+            <div class="weather-details">
+                <div class="detail-box">
+                    <span>Feels like</span>
+                    <strong id="feelsLike">--°F</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>Humidity</span>
+                    <strong id="humidity">--%</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>Wind</span>
+                    <strong id="wind">-- mph</strong>
+                </div>
+            </div>
+
+            <h3>5-Day Forecast</h3>
+
+            <div id="forecastContainer" class="forecast-container"></div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
-
 </body>
 </html>
